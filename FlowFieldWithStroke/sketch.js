@@ -9,7 +9,7 @@ let flowfield = [];
 let fr;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(800, 800);
   comlumns = floor(width / scale);
   rows = floor(height / scale);
   fr = createP("");
@@ -21,22 +21,27 @@ function setup() {
 }
 
 function draw() {
+  // background(255);
   let yoff = 0;
   for (let x = 0; x < comlumns; x++) {
-    let xoff = 0; 
+    let xoff = 0;
     for (let y = 0; y < rows; y++) {
+      // let brightness = random(255);
       var index = x + y * comlumns;
-      let angle;
-      if (index > 400) {
-        angle = cos(noise(xoff, yoff, zoff)) * TWO_PI;
-      } else {
-        angle = noise(xoff, yoff, zoff) * TWO_PI;
-      }
+      let angle = noise(xoff, yoff, zoff) * TWO_PI;
       let vector = p5.Vector.fromAngle(angle);
       vector.setMag(0.5);
       flowfield[index] = vector;
       xoff += inc;
       stroke(0, 50);
+      // push();
+      // translate(x * scale, y * scale);
+      // rotate(vector.heading());
+      // strokeWeight(1);
+      // line(0, 0, scale, 0);
+      // pop();
+      // fill(brightness);
+      // rect(x * scale, y * scale, scale, scale);
     }
     yoff += inc;
     zoff += 0.0001;

@@ -30,7 +30,7 @@ function Particule() {
   this.follow = function(vectors) {
     let x = floor(this.position.x / scale);
     let y = floor(this.position.y / scale);
-    let index = x + y * columns;
+    let index = x + y * comlumns;
     let force = vectors[index];
     this.applyForce(force);
   };

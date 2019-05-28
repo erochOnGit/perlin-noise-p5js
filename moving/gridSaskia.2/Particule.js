@@ -14,10 +14,13 @@ function Particule() {
     this.acceleration.add(force);
   };
 
-  this.show = function() {
-    stroke(0);
-    strokeWeight(4);
-    point(this.position.x, this.position.y);
+  this.show = function(x, y, color) {
+    push();
+    stroke(255, 255, 255, 10);
+    // stroke(color * 100, noise(x, y) * 200, color * 100, 10);
+    strokeWeight(1);
+    line(x, y, this.position.x, this.position.y);
+    pop();
   };
 
   this.edges = function() {
@@ -28,10 +31,12 @@ function Particule() {
   };
 
   this.follow = function(vectors) {
-    let x = floor(this.position.x / scale);
-    let y = floor(this.position.y / scale);
+    let x = floor(this.position.x / widthMultp);
+    let y = floor(this.position.y / heightMultp);
     let index = x + y * columns;
+    // console.log(vectors);
+    // console.log(index, vectors[index]);
     let force = vectors[index];
-    this.applyForce(force);
+    this.applyForce(force.mult(0.05));
   };
 }

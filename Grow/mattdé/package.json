@@ -25,7 +25,7 @@
     "decode-uri-component": "^0.2.0",
     "define-property": "^2.0.2",
     "domain-browser": "^1.2.0",
-    "elliptic": "^6.4.1",
+    "elliptic": "^6.5.3",
     "emojis-list": "^2.1.0",
     "des.js": "^1.0.0",
     "escape-string-regexp": "^1.0.5",

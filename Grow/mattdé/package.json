@@ -46,7 +46,7 @@
     "get-caller-file": "^1.0.3",
     "get-stream": "^3.0.0",
     "get-value": "^2.0.6",
-    "glob-parent": "^3.1.0",
+    "glob-parent": "^5.1.2",
     "graceful-fs": "^4.1.15",
     "has-flag": "^3.0.0",
     "has-values": "^1.0.0",
